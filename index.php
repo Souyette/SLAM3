@@ -25,7 +25,7 @@
             <form action="pageInscription.php" method="POST">
                 <input type="submit" id='submit' value="S'inscrire" >
                 <?php
-                // Code de vérification Je teste
+                // Code de vérification
                 ?>
             </form>
         </div>
