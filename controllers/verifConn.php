@@ -25,7 +25,7 @@ class verifConn extends Web
         $this->redirect("/login/home");
     }
 
-    function loginn($login = "", $password = "")
+    function loginn($login = "")
     {
         if (SessionHelpers::isLogin()) {
             $this->redirect("/");
@@ -35,7 +35,8 @@ class verifConn extends Web
         if (!empty($login) && !empty($password)) {
             $verificationLogin = new \models\VerifC();
 
-            $Verif = $verificationLogin->loginn($login, $password);
+            $Verif = $verificationLogin->loginn($login);
+
             if ($Verif != null) {
                 SessionHelpers::login($Verif);
                 $this->redirect("../todo/liste");

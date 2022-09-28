@@ -21,8 +21,9 @@ class Web
 
         $test = new verifConn();
         Route::Add('/login/home', [$test, 'login']);
-        Route::Add('/login/create', [$test, 'create']);
+        Route::Add('/login/inscription', [$test, 'create']);
         Route::Add('/login/loginn', [$test, 'loginn']);
+        Route::Add('/login/logout', [$test, 'logout']);
 
 
 
