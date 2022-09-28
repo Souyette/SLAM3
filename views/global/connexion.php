@@ -17,6 +17,9 @@
             </form>
 
         </form>
+        <form action="./logout" method="post" id="formContent">
+            <input type="submit" class="fadeIn fourth" value="Log Out">
+        </form>
     </div>
 
 </div>

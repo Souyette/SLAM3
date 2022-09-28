@@ -23,6 +23,9 @@ class Web
         Route::Add('/login/home', [$test, 'login']);
         Route::Add('/login/create', [$test, 'create']);
         Route::Add('/login/loginn', [$test, 'loginn']);
+        Route::Add('/login/logout', [$test, 'logout']);
+        Route::Add('/login/Inscr', [$test, 'Inscr']);
+        Route::Add('/login/ConnTrue', [$test, 'ConnTrue']);
 
 
 

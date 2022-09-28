@@ -28,7 +28,7 @@ class verifConn extends Web
     function loginn($login = "", $password = "")
     {
         if (SessionHelpers::isLogin()) {
-            $this->redirect("/");
+            $this->redirect("../views/global/about.php");
         }
 
         $erreur = "";
@@ -38,10 +38,10 @@ class verifConn extends Web
             $Verif = $verificationLogin->loginn($login);
             if ($Verif != null) {
                 SessionHelpers::login($Verif);
-                $this->redirect("../views/global/home.php");
+                $this->redirect("./ConnTrue");
             } else {
                 SessionHelpers::logout();
-                $this->redirect("../views/global/home.php");
+                $this->redirect("./Inscr");
                 $erreur = "Connexion impossible avec vos identifiants";
             }
         }
@@ -49,6 +49,20 @@ class verifConn extends Web
         return Template::render("views/global/connexion.php", array("erreur" => $erreur));
     }
 
-    
+    function logout(): void
+    {
+        SessionHelpers::logout();
+        $this->redirect("./home");
+    }
+
+    function Inscr()
+    {
+        Template::render("views/global/pageInscription.php" , array());
+    }
+
+    function ConnTrue()
+    {
+        Template::render("views/global/pageConnecter.php" , array());
+    }
 
 }    

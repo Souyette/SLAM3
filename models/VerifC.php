@@ -16,8 +16,9 @@ class VerifC extends SQL
         $stmt = $this->pdo->prepare('SELECT * FROM utilisateur WHERE login = ? LIMIT 1');
         $stmt->execute([$login]);
         $result = $stmt->fetch(\PDO::FETCH_ASSOC);
-        var_dump($login);
-        echo 'yo' . $login;
+        if($result){
+            return true; 
+        }else return false;
        
     }
 
