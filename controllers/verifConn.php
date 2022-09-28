@@ -35,12 +35,13 @@ class verifConn extends Web
         if (!empty($login) && !empty($password)) {
             $verificationLogin = new \models\VerifC();
 
-            $Verif = $verificationLogin->loginn($login, $password);
+            $Verif = $verificationLogin->loginn($login);
             if ($Verif != null) {
                 SessionHelpers::login($Verif);
-                $this->redirect("../todo/liste");
+                $this->redirect("../views/global/home.php");
             } else {
                 SessionHelpers::logout();
+                $this->redirect("../views/global/home.php");
                 $erreur = "Connexion impossible avec vos identifiants";
             }
         }
