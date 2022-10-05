@@ -25,8 +25,9 @@ class Web
         Route::Add('/login/loginn', [$test, 'loginn']);
         Route::Add('/login/logout', [$test, 'logout']);
         Route::Add('/login/Inscr', [$test, 'Inscr']);
+        if (SessionHelpers::isLogin()){
         Route::Add('/login/ConnTrue', [$test, 'ConnTrue']);
-
+        }
 
 
        

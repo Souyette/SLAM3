@@ -1,0 +1,1 @@
+<div>Bonjour <?php echo  $_SESSION['USER']['login']; ?></div>
